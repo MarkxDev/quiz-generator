@@ -1,0 +1,20 @@
+<div class="well">
+  <h2>Select category and difficulty:</h2>
+  <form [formGroup]="formCD" (ngSubmit)="onSubmit()">
+    <select formControlName="category" class="form-control" placeholder="Category" id="selectCategory">
+      <option value="">Select a category</option>
+      <ng-container *ngFor="let category of categories">
+        <option [value]="category.id">{{category.name}}</option>
+      </ng-container>
+    </select>
+    <select formControlName="difficulty" class="form-control" placeholder="Difficulty" id="selectDifficulty">
+      <option value="">Select a difficulty</option>
+      <option value="easy"> Easy </option>
+      <option value="easy"> Medium </option>
+      <option value="easy"> Hard </option>
+    </select>
+    <button class="btn btn-primary" id="createQuizBtn" type="submit">
+      Create
+    </button>
+  </form>
+</div>
