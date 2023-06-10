@@ -10,11 +10,13 @@
     <select id="difficultySelect" formControlName="difficulty" class="form-control" placeholder="Difficulty" id="selectDifficulty">
       <option value="">Select a difficulty</option>
       <option value="easy"> Easy </option>
-      <option value="easy"> Medium </option>
-      <option value="easy"> Hard </option>
+      <option value="medium"> Medium </option>
+      <option value="hard"> Hard </option>
     </select>
     <button id="createBtn" class="btn btn-primary" type="submit">
       Create
     </button>
   </form>
 </div>
+
+<app-quiz [questions]="questions"></app-quiz>

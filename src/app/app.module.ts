@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
+import { QuizComponent } from './componets/quiz/quiz.component';
 
 
 const materialModules = [
@@ -63,7 +64,8 @@ const materialModules = [
 @NgModule({
   declarations: [
     AppComponent,
-    SelectComponent
+    SelectComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
