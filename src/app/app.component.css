@@ -218,6 +218,8 @@ a:hover {
 }
 
 footer {
+  position: absolute;
+  bottom: 10px;
   margin-top: 8px;
   display: flex;
   align-items: center;
