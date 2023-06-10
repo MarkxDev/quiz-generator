@@ -18,6 +18,8 @@ export class SelectComponent implements OnInit{
   categories: ICategory[] = []
   questions: IQuestion[] = []
 
+  showQuestionsSpinner = false;
+
   constructor(protected activatedRoute: ActivatedRoute, private service: AppService, private fb: FormBuilder){}
 
   ngOnInit() {
@@ -34,6 +36,8 @@ export class SelectComponent implements OnInit{
 
   onSubmit() {
     if (this.formCD.valid) {
+      this.questions = [];
+      this.showQuestionsSpinner = true;
       this.service.getQuestions(this.formCD.value.category, this.formCD.value.difficulty).subscribe(
         (questions) => {
           if(questions.body){
@@ -50,8 +54,6 @@ export class SelectComponent implements OnInit{
 
   protected onSuccessResponse(data: IQuestionResponce) {
     this.questions = data.results;
-    console.log('questions: ', data);
-    console.log('this.questions: ', this.questions);
   }
 
   protected onErrorResponse(error: any) {

@@ -19,4 +19,12 @@
   </form>
 </div>
 
-<app-quiz *ngIf="questions && questions.length > 0" [questions]="questions"></app-quiz>
+<ng-container *ngIf="questions && questions.length > 0; else elseBock">
+  <app-quiz [questions]="questions"></app-quiz>
+</ng-container>
+
+<ng-template #elseBock>
+  <mat-spinner *ngIf="showQuestionsSpinner"></mat-spinner>
+</ng-template>
+
+
