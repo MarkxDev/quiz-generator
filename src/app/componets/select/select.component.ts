@@ -25,6 +25,8 @@ export class SelectComponent implements OnInit{
 
     this.activatedRoute.data.subscribe(({ categories }) => {
       if(categories.body){
+        const spinner = document.getElementById('initialSpinner') as HTMLElement | null;
+        spinner?.remove();
         this.categories = categories.body.trivia_categories;
       }
     });
