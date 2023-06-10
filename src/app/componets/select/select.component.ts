@@ -54,8 +54,6 @@ export class SelectComponent implements OnInit{
 
   protected onSuccessResponse(data: IQuestionResponce) {
     this.questions = data.results;
-    console.log('questions: ', data);
-    console.log('this.questions: ', this.questions);
   }
 
   protected onErrorResponse(error: any) {

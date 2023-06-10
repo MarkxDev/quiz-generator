@@ -33,7 +33,6 @@ export class QuizComponent implements OnInit, OnChanges {
       }
       this.questionsView.push(questionView);
     });
-    console.log('this.questionsView: ', this.questionsView);
   }
 
 }
