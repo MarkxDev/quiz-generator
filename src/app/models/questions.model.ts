@@ -11,3 +11,6 @@ export interface IQuestion {
   correct_answer: string,
   incorrect_answers: string[]
 }
+
+
+export type QuestionView = IQuestion & { answers: string[] };

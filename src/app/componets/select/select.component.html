@@ -19,4 +19,4 @@
   </form>
 </div>
 
-<app-quiz [questions]="questions"></app-quiz>
+<app-quiz *ngIf="questions && questions.length > 0" [questions]="questions"></app-quiz>

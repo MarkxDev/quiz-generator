@@ -1,3 +1,10 @@
 <ul>
-  <li *ngFor="let question of questions">{{question.question}}</li>
+  <li *ngFor="let questionView of questionsView">
+    {{questionView.question}}<br>
+    <mat-button-toggle-group name="Answer" aria-label="Answer">
+      <mat-button-toggle *ngFor="let answer of questionView.answers" [value]="answer">{{answer}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </li>
 </ul>
+
+
