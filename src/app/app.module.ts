@@ -12,9 +12,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
-/* import { MatDatepickerModule } from '@angular/material/datepicker'; */
-/* import { MatLuxonDateModule } from '@angular/material-luxon-adapter'; */
 
 
 const materialModules = [
@@ -22,14 +25,14 @@ const materialModules = [
   // MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
-  // MatCheckboxModule,
+  MatCheckboxModule,
   // MatChipsModule,
-  // MatDividerModule,
+  MatDividerModule,
   // MatExpansionModule,
   // MatIconModule,
   // MatInputModule,
-  // MatListModule,
-  // MatMenuModule,
+  MatListModule,
+  MatMenuModule,
   // MatProgressSpinnerModule,
   // MatPaginatorModule,
   // MatRippleModule,
@@ -40,7 +43,7 @@ const materialModules = [
   // MatTableModule,
   // MatTabsModule,
   // MatToolbarModule,
-  // MatFormFieldModule,
+  MatFormFieldModule,
   MatButtonToggleModule,
   // MatTreeModule,
   // OverlayModule,
@@ -48,10 +51,10 @@ const materialModules = [
   // MatBadgeModule,
   // MatGridListModule,
   MatRadioModule,
-  // /* MatDatepickerModule, */
+  // MatDatepickerModule,
   // MatTooltipModule,
   // MatSliderModule,
-  // /*   MatLuxonDateModule , */
+  // MatLuxonDateModule ,
   FormsModule,
   ReactiveFormsModule,
   // MatDialogModule,
