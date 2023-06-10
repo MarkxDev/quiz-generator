@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { QuizComponent } from './componets/quiz/quiz.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 const materialModules = [
@@ -34,7 +35,7 @@ const materialModules = [
   // MatInputModule,
   MatListModule,
   MatMenuModule,
-  // MatProgressSpinnerModule,
+  MatProgressSpinnerModule,
   // MatPaginatorModule,
   // MatRippleModule,
   MatSelectModule,
