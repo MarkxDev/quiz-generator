@@ -1,10 +1,19 @@
-<ul>
-  <li *ngFor="let questionView of questionsView">
-    {{questionView.question}}<br>
-    <mat-button-toggle-group name="Answer" aria-label="Answer">
-      <mat-button-toggle *ngFor="let answer of questionView.answers" [value]="answer">{{answer}}</mat-button-toggle>
-    </mat-button-toggle-group>
-  </li>
-</ul>
+<form id="formQuestions" [formGroup]="formQuestions" (ngSubmit)="onSubmit()" style="margin-top: 15px;">
+  <div formArrayName="questions">
+    <div *ngFor="let questionView of questionsView; index as i" style="margin-top: 10px;">
+      {{questionView.question}}<br>
+      <mat-button-toggle-group [formControlName]="i" [name]="'AnswersGroup'+i" aria-label="Answer">
+        <mat-button-toggle *ngFor="let answer of questionView.answers" [value]="answer">{{answer}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+
+  <div *ngIf="showScore" [class]="'score-text ' + this.scoreToCssClass() ">
+    You scored {{score}} out of {{questionsView.length}}
+  </div>
+
+  <button *ngIf="formQuestions.valid" mat-raised-button
+    color="primary" type="submit" class="submit-btn">Submit</button>
+</form>
 
 

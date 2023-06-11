@@ -1,0 +1,52 @@
+.mat-button-toggle{
+  background-color: transparent;
+  color: green;
+  border: solid 1px green;
+}
+
+.mat-button-toggle:hover {
+  background-color: green;
+  color: white !important;
+}
+
+.mat-button-toggle-checked {
+  background-color: green;
+  color: white !important;
+}
+
+.incorrect {
+  /* background-color: rgba(255, 0, 0, 0.368); */
+}
+
+.incorrect .correctAnsware {
+  background-color: green;
+  color: white !important;
+}
+
+.incorrect .mat-button-toggle-checked {
+  background-color: red;
+  color: white !important;
+}
+
+.submit-btn {
+  width: 100%;
+  margin: 20px 70px 0;
+}
+
+.score-text {
+  width: max-content;
+  margin: 20px auto 0;
+  padding: 5px 10px;
+}
+
+.score-text.red {
+  background-color: red;
+}
+
+.score-text.yellow {
+  background-color: yellow;
+}
+
+.score-text.green {
+  background-color: green;
+}
