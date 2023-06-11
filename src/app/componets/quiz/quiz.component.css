@@ -13,3 +13,17 @@
   background-color: green;
   color: white !important;
 }
+
+.incorrect {
+  /* background-color: rgba(255, 0, 0, 0.368); */
+}
+
+.incorrect .correctAnsware {
+  background-color: green;
+  color: white !important;
+}
+
+.incorrect .mat-button-toggle-checked {
+  background-color: red;
+  color: white !important;
+}
