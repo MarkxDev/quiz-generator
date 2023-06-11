@@ -14,6 +14,9 @@ export class QuizComponent implements OnInit, OnChanges {
 
   formQuestions!: FormGroup;
 
+  showScore = false;
+  score?: number;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -23,22 +26,20 @@ export class QuizComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.buildForm();
   }
+
   onSubmit(){
 
     if (this.formQuestions.valid) {
 
-      console.log(this.formQuestions);
-      console.log(this.formQuestions.value.questions);
-      console.log(this.formQuestions.get('questions'));
-
       const selectedValues = this.formQuestions.value.questions as string[];
-      const questionsControl = <FormArray>this.formQuestions.get('questions');
+      this.score = this.questions.length;
 
       for (let index = 0; index < this.questions.length; index++) {
         const selectedAnswer = selectedValues[index];
         const correctAnswer = this.questions[index].correct_answer;
 
         if(selectedAnswer != correctAnswer ){
+          this.score--;
           const buttonToggleGroup = document.querySelector(`mat-button-toggle-group[ng-reflect-name='AnswersGroup${index}']`) as HTMLElement;
           console.log('buttonToggleGroup: ', buttonToggleGroup);
           buttonToggleGroup.classList.add('incorrect');
@@ -48,13 +49,29 @@ export class QuizComponent implements OnInit, OnChanges {
 
       }
 
+      this.showScore = true;
 
     } else {
       console.error("Form is invalid!");
     }
   }
 
+  protected scoreToCssClass(): string {
+    let scoreCssClass = "";
+    if(this.score != undefined){
+      if(this.score <= 1){
+        scoreCssClass = "red";
+      }else if( this.score == 2 || this.score == 3 ){
+        scoreCssClass = "yellow";
+      } else {
+        scoreCssClass = "green";
+      }
+    }
+    return scoreCssClass;
+  }
+
   private reloadQuestionsView() {
+    this.showScore = false;
     this.questionsView = []
     this.questions.forEach(question => {
       const questionView = {
