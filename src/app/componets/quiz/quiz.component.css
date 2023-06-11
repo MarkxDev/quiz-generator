@@ -1,0 +1,15 @@
+.mat-button-toggle{
+  background-color: transparent;
+  color: green;
+  border: solid 1px green;
+}
+
+.mat-button-toggle:hover {
+  background-color: green;
+  color: white !important;
+}
+
+.mat-button-toggle-checked {
+  background-color: green;
+  color: white !important;
+}
