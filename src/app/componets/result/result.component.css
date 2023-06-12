@@ -2,6 +2,8 @@
   background-color: transparent;
   color: green;
   border: solid 1px green;
+  line-height: 48px;
+  padding: 0 12px;
 }
 
 .answer.selected,

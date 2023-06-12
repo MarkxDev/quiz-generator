@@ -1,7 +1,7 @@
 <h2 style="text-align: center;">RESULTS</h2>
 
 <div *ngFor="let quiz of resultView.quizEndData; index as i" style="margin-top: 10px;">
-  {{quiz.question}}<br>
+  <div style="margin-bottom: 5px">{{quiz.question}}</div>
   <div class="d-flex">
     <div class="answer" *ngFor="let answer of quiz.answers"
       [ngClass]="{'selected': answer === quiz.selected_answer, 'incorrect': answer !== quiz.correct_answer, 'correct': answer === quiz.correct_answer}"
