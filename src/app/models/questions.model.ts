@@ -14,3 +14,5 @@ export interface IQuestion {
 
 
 export type QuestionView = IQuestion & { answers: string[] };
+export type QuizEndData = QuestionView & { selected_answer: string };
+export type ResultView = { quizEndData: QuizEndData[], score?: number };

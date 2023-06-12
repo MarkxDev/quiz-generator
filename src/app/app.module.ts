@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { QuizComponent } from './componets/quiz/quiz.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ResultComponent } from './componets/result/result.component';
 
 
 const materialModules = [
@@ -66,7 +67,8 @@ const materialModules = [
   declarations: [
     AppComponent,
     SelectComponent,
-    QuizComponent
+    QuizComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

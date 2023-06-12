@@ -1,0 +1,39 @@
+.answer {
+  background-color: transparent;
+  color: green;
+  border: solid 1px green;
+}
+
+.answer.selected,
+.answer.correct {
+  background-color: green;
+  color: white !important;
+}
+
+.answer.selected.incorrect {
+  background-color: red;
+  color: white !important;
+}
+
+.score-text {
+  width: max-content;
+  margin: 20px auto 0;
+  padding: 5px 10px;
+}
+
+.score-text.red {
+  background-color: red;
+}
+
+.score-text.yellow {
+  background-color: yellow;
+}
+
+.score-text.green {
+  background-color: green;
+}
+
+.new-quiz-btn {
+  width: 100%;
+  margin: 20px 70px 0;
+}

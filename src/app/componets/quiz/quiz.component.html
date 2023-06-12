@@ -8,10 +8,6 @@
     </div>
   </div>
 
-  <div *ngIf="showScore" [class]="'score-text ' + this.scoreToCssClass() ">
-    You scored {{score}} out of {{questionsView.length}}
-  </div>
-
   <button *ngIf="formQuestions.valid" mat-raised-button
     color="primary" type="submit" class="submit-btn">Submit</button>
 </form>
