@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SelectComponent } from './componets/select/select.component';
+import { HomeComponent } from './componets/home/home.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -17,56 +17,32 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { QuizComponent } from './componets/quiz/quiz.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ResultComponent } from './componets/result/result.component';
 
 
 const materialModules = [
-  // CdkTreeModule,
-  // MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  // MatChipsModule,
   MatDividerModule,
-  // MatExpansionModule,
-  // MatIconModule,
-  // MatInputModule,
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
-  // MatPaginatorModule,
-  // MatRippleModule,
   MatSelectModule,
-  // MatSidenavModule,
-  // MatSnackBarModule,
-  // MatSortModule,
-  // MatTableModule,
-  // MatTabsModule,
-  // MatToolbarModule,
   MatFormFieldModule,
   MatButtonToggleModule,
-  // MatTreeModule,
-  // OverlayModule,
-  // PortalModule,
-  // MatBadgeModule,
-  // MatGridListModule,
   MatRadioModule,
-  // MatDatepickerModule,
-  // MatTooltipModule,
-  // MatSliderModule,
-  // MatLuxonDateModule ,
   FormsModule,
   ReactiveFormsModule,
-  // MatDialogModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelectComponent,
+    HomeComponent,
     QuizComponent,
     ResultComponent
   ],

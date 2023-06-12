@@ -7,11 +7,11 @@ import { AppService } from 'src/app/services/app.service';
 
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class SelectComponent implements OnInit{
+export class HomeComponent implements OnInit{
 
   formCD!: FormGroup;
 
