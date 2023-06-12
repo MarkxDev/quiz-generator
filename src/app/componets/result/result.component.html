@@ -1,0 +1,16 @@
+<h2 style="text-align: center;">RESULTS</h2>
+
+<div *ngFor="let quiz of resultView.quizEndData; index as i" style="margin-top: 10px;">
+  <div style="margin-bottom: 5px">{{quiz.question}}</div>
+  <div class="d-flex">
+    <div class="answer" *ngFor="let answer of quiz.answers"
+      [ngClass]="{'selected': answer === quiz.selected_answer, 'incorrect': answer !== quiz.correct_answer, 'correct': answer === quiz.correct_answer}"
+    >{{answer}}</div>
+  </div>
+</div>
+
+<div class="score-text" [ngClass]="this.scoreToCssClass(resultView.score!) ">
+  You scored {{resultView.score}} out of {{resultView.quizEndData.length}}
+</div>
+
+<button mat-raised-button color="primary" type="button" class="new-quiz-btn" (click)="newQuiz()">Create a new quiz</button>

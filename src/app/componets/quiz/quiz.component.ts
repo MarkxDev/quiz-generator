@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { IQuestion, QuestionView } from 'src/app/models/questions.model';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { IQuestion, QuestionView, QuizEndData } from 'src/app/models/questions.model';
 
 @Component({
   selector: 'app-quiz',
@@ -14,10 +15,7 @@ export class QuizComponent implements OnInit, OnChanges {
 
   formQuestions!: FormGroup;
 
-  showScore = false;
-  score?: number;
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.reloadQuestionsView();
@@ -32,46 +30,23 @@ export class QuizComponent implements OnInit, OnChanges {
     if (this.formQuestions.valid) {
 
       const selectedValues = this.formQuestions.value.questions as string[];
-      this.score = this.questions.length;
 
-      for (let index = 0; index < this.questions.length; index++) {
-        const selectedAnswer = selectedValues[index];
-        const correctAnswer = this.questions[index].correct_answer;
+      let resultArr: QuizEndData[] = [];
 
-        if(selectedAnswer != correctAnswer ){
-          this.score--;
-          const buttonToggleGroup = document.querySelector(`mat-button-toggle-group[ng-reflect-name='AnswersGroup${index}']`) as HTMLElement;
-          console.log('buttonToggleGroup: ', buttonToggleGroup);
-          buttonToggleGroup.classList.add('incorrect');
-          const correctButtonToggle = buttonToggleGroup.querySelector(`mat-button-toggle[ng-reflect-value='${correctAnswer}']`) as HTMLElement;
-          correctButtonToggle.classList.add('correctAnsware');
-        }
-
+      for (let index = 0; index < this.questionsView.length; index++) {
+        resultArr.push({...this.questionsView[index], selected_answer: selectedValues[index] });
       }
 
-      this.showScore = true;
+      localStorage.setItem('quizEndData', JSON.stringify(resultArr));
+
+      this.router.navigate(['result']);
 
     } else {
       console.error("Form is invalid!");
     }
   }
 
-  protected scoreToCssClass(): string {
-    let scoreCssClass = "";
-    if(this.score != undefined){
-      if(this.score <= 1){
-        scoreCssClass = "red";
-      }else if( this.score == 2 || this.score == 3 ){
-        scoreCssClass = "yellow";
-      } else {
-        scoreCssClass = "green";
-      }
-    }
-    return scoreCssClass;
-  }
-
   private reloadQuestionsView() {
-    this.showScore = false;
     this.questionsView = []
     this.questions.forEach(question => {
       const questionView = {
