@@ -1,0 +1,7 @@
+#formCD {
+  display: flex;
+}
+
+#formCD select {
+  margin-right: 10px;
+}
