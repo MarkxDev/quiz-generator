@@ -3,7 +3,9 @@
     <div *ngFor="let questionView of questionsView; index as i" style="margin-top: 10px;">
       <div style="margin-bottom: 5px" [innerHTML]="questionView.question"></div>
       <mat-button-toggle-group [formControlName]="i" [name]="'AnswersGroup'+i" aria-label="Answer">
-        <mat-button-toggle *ngFor="let answer of questionView.answers" [value]="answer">{{answer}}</mat-button-toggle>
+        <mat-button-toggle *ngFor="let answer of questionView.answers" [value]="answer">
+          <span [innerHTML]='answer'></span>
+        </mat-button-toggle>
       </mat-button-toggle-group>
     </div>
   </div>
