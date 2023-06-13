@@ -5,7 +5,7 @@
   <div class="d-flex">
     <div class="answer" *ngFor="let answer of quiz.answers"
       [ngClass]="{'selected': answer === quiz.selected_answer, 'incorrect': answer !== quiz.correct_answer, 'correct': answer === quiz.correct_answer}"
-    >{{answer}}</div>
+    ><span [innerHTML]='answer'></span></div>
   </div>
 </div>
 
