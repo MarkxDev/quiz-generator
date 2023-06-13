@@ -51,10 +51,10 @@ export class QuizComponent implements OnInit, OnChanges {
     this.questions.forEach(question => {
       const questionView = {
         ...question,
-        answers: [
+        answers: this.shuffleAnswers([
           question.correct_answer,
           ...question.incorrect_answers
-        ]
+        ])
       }
       this.questionsView.push(questionView);
     });
@@ -76,6 +76,16 @@ export class QuizComponent implements OnInit, OnChanges {
     //   questionsControl.push(["", Validators.required]);
     // });
 
+  }
+
+  private shuffleAnswers(answers: string[]): string[] {
+    for (let i = answers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      // Swap elements at position i and j
+      [answers[i], answers[j]] = [answers[j], answers[i]];
+    }
+    return answers;
   }
 
 }
