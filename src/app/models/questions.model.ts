@@ -1,6 +1,6 @@
 export interface IQuestionResponce {
   response_code: number,
-  results: any[]
+  results: IQuestion[]
 }
 
 export interface IQuestion {
