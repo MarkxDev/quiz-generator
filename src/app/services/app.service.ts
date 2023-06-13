@@ -12,17 +12,16 @@ export type CategoryResourceResponseType = HttpResponse<ICategoryResource>;
 })
 export class AppService {
 
-  private resourceCatetegoryUrl = "https://opentdb.com/api_category.php"
-  private resourceQuestionsUrl = "https://opentdb.com/api.php"
+  private resourceUrl = "https://opentdb.com/"
 
   constructor(private http: HttpClient) { }
 
   public getCategories(): Observable<CategoryResourceResponseType> {
-    return this.http.get<ICategoryResource>(this.resourceCatetegoryUrl, { observe: 'response' });
+    return this.http.get<ICategoryResource>(`${this.resourceUrl}api_category.php`, { observe: 'response' });
   }
 
   public getQuestions(category: number, difficulty: string): Observable<QuestionResponseType> {
-    return this.http.get<IQuestionResponce>(`${this.resourceQuestionsUrl}?amount=5&category=${category}&difficulty=${difficulty}&type=multiple`, { observe: 'response' });
+    return this.http.get<IQuestionResponce>(`${this.resourceUrl}api.php?amount=5&category=${category}&difficulty=${difficulty}&type=multiple`, { observe: 'response' });
   }
 
   public getResult(): Observable<QuizEndData[]>{
