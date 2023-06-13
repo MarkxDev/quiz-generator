@@ -76,7 +76,6 @@ export class QuizComponent implements OnInit, OnChanges {
     //   questionsControl.push(["", Validators.required]);
     // });
 
-    console.log(this.formQuestions);
   }
 
 }

@@ -22,8 +22,6 @@ export class ResultComponent  implements OnInit {
         spinner?.remove();
 
         this.resultView = {quizEndData, score: this.calculateScore(quizEndData)};
-        console.log('quizEndData: ', quizEndData )
-        console.log('this.resultView: ', this.resultView )
       }
     });
   }
@@ -53,7 +51,6 @@ export class ResultComponent  implements OnInit {
   }
 
   protected newQuiz(){
-    console.log('newQuiz');
     // window.history.back();
     this.router.navigate(['']);
   }
