@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit{
   }
 
   protected onSuccessResponse(data: IQuestionResponce) {
-    this.questions = data.results;
+    this.questions = this.shuffleQuestions(data.results);
   }
 
   protected onErrorResponse(error: any) {
@@ -66,6 +66,16 @@ export class HomeComponent implements OnInit{
       category: ["", Validators.required],
       difficulty: ["", Validators.required]
     });
+  }
+
+  private shuffleQuestions(questions: IQuestion[]): IQuestion[] {
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      // Swap elements at position i and j
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+    return questions;
   }
 
 }
